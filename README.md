@@ -1,24 +1,16 @@
-# README
+Ruby version:
+Ruby 3.2.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+System dependencies:
+The application depends on several gems, the full list of dependencies is in the Gemfile and Gemfile.lock.
 
-Things you may want to cover:
+Database creation and initialization:
+rails db:migrate
 
-* Ruby version
+How to run the tests:
+rails test
 
-* System dependencies
+How to run the application:
+rails server
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Visit http://localhost:3000 in your web browser to access the application.

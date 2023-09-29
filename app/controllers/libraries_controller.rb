@@ -57,6 +57,12 @@ class LibrariesController < ApplicationController
     end
   end
 
+  # This code was written with assistance by OpenAI's GPT-4 model
+  def delete_selected
+    Library.where(id: params[:library_ids]).destroy_all
+    redirect_to libraries_url, notice: "Libraries were successfully destroyed."
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_library

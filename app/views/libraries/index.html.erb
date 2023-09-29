@@ -1,14 +1,22 @@
+<%# This code was written with assistance by OpenAI's GPT-4 model %#>
+
 <p style="color: green"><%= notice %></p>
 
 <h1>Libraries</h1>
 
-<div id="libraries">
-  <% @libraries.each do |library| %>
-    <%= render library %>
-    <p>
-      <%= link_to "Show this library", library %>
-    </p>
-  <% end %>
-</div>
+<%= form_tag delete_selected_libraries_path, method: :delete, id: "librariesForm" do %>
+  <%= submit_tag "Delete Selected", style: "margin-bottom: 20px;" %>
+  <div id="libraries">
+    <% @libraries.each do |library| %>
+      <div style="display: flex; align-items: center;">
+        <%= check_box_tag "library_ids[]", library.id, false, style: "margin-right: 10px;" %>
+        <%= render library %>
+        <p style="margin-left: 10px;">
+          <%= link_to "Show this library", library %>
+        </p>
+      </div>
+    <% end %>
+  </div>
 
-<%= link_to "New library", new_library_path %>
+  <%= link_to "New library", new_library_path %>
+<% end %>
