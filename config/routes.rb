@@ -1,6 +1,7 @@
 # This code was written with assistance by OpenAI's GPT-4 model
 
 Rails.application.routes.draw do
+  resources :books
   resources :people
   resources :libraries do
     collection do
