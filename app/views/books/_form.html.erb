@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :person_id, style: "display: block" %>
-    <%= form.text_field :person_id %>
+    <%= form.collection_select :person_id, Person.all, :id, :name, prompt: true %>
   </div>
 
   <div>
