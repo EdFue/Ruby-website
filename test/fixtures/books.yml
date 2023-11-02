@@ -1,11 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: MyString
   isbn: MyString
   person: one
 
-two:
-  title: MyString
-  isbn: MyString
-  person: two
