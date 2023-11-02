@@ -4,9 +4,9 @@ class BookTest < ActiveSupport::TestCase
   setup do
     @person = people(:one)
     @valid_attributes = {
-      title: "A Valid Book Title",
-      isbn: "ISBN 978-0-306-40615-7",
-      person: @person
+      person: @person,
+      title: "A valid book title",
+      isbn: "ISBN 075-5-757-88395-8" 
     }
   end
 
@@ -16,15 +16,9 @@ class BookTest < ActiveSupport::TestCase
     assert_not_nil book.errors[:title]
   end
 
-  test "should be invalid without an ISBN" do
-    book = Book.new(@valid_attributes.merge(isbn: ""))
+  test "should be invalid with invalid ISBN" do
+    book = Book.new(@valid_attributes.merge(isbn: "invalid-isbn"))
     assert_not book.valid?
-    assert_not_nil book.errors[:isbn]
-  end
-
-  test "should be invalid with incorrect ISBN format" do
-    book = Book.new(@valid_attributes.merge(isbn: "12345"))
-    assert_not book.valid?
-    assert_not_nil book.errors[:isbn]
+    assert_equal ["must be in this format: ISBN XXX-X-XXX-XXXXX-X where X is a digit"], book.errors[:isbn]
   end
 end
