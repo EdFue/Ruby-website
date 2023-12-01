@@ -7,10 +7,9 @@ The application depends on several gems, the full list of dependencies is in the
 Database creation and initialization:
 rails db:migrate
 
-How to run the tests:
-rails test
+rails db:seed
 
 How to run the application:
-rails server
+rails s
 
-Visit http://localhost:3000 in your web browser to access the application.
+Visit http://localhost:3000/index.html in your web browser to access the SPA.
